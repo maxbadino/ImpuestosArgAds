@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Impuestos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .container {
+            text-align: left;
+        }
+        .input-section {
+            margin-bottom: 20px;
+        }
+        .result-section {
+            margin-top: 20px;
+        }
+        .result-section div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        .total {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Impuestos</h1>
+        
+        <div class="input-section">
+            <label for="monto">Monto en ARS:</label>
+            <input type="number" id="monto" value="500" readonly>
+        </div>
+        
+        <div class="result-section">
+            <div>
+                <span>IVA 21%</span>
+                <span>$105.00</span>
+            </div>
+            <div>
+                <span>PAIS 8%</span>
+                <span>$40.75</span>
+            </div>
+            <div>
+                <span>Ganancias 30%</span>
+                <span>$152.84</span>
+            </div>
+            <div>
+                <span>IIBB 2%</span>
+                <span>$10.18</span>
+            </div>
+            <div class="total">
+                <span>Total a pagar:</span>
+                <span>$808.77</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

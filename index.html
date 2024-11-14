@@ -69,11 +69,11 @@
         function calcularImpuestos() {
             const monto = parseFloat(document.getElementById("monto").value) || 0;
 
-            // Calcular cada impuesto
-            const iva = monto * 0.21;
-            const pais = monto * 0.08;
-            const ganancias = monto * 0.30568; // Factor ajustado para un total de $152.84 en $500
-            const iibb = monto * 0.02;
+            // Calcular cada impuesto usando factores ajustados
+            const iva = monto * 0.21;            // IVA 21%
+            const pais = monto * 0.0815;         // PAIS ajustado a 8.15%
+            const ganancias = monto * 0.30568;   // Ganancias ajustado a 30.568%
+            const iibb = monto * 0.02036;        // IIBB ajustado a 2.036%
 
             // Mostrar los valores en pantalla
             document.getElementById("iva").textContent = "$" + iva.toFixed(2);

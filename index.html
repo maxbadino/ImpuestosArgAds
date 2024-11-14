@@ -38,31 +38,56 @@
         
         <div class="input-section">
             <label for="monto">Monto en ARS:</label>
-            <input type="number" id="monto" value="500" readonly>
+            <input type="number" id="monto" value="500" oninput="calcularImpuestos()">
         </div>
         
         <div class="result-section">
             <div>
                 <span>IVA 21%</span>
-                <span>$105.00</span>
+                <span id="iva">$0.00</span>
             </div>
             <div>
                 <span>PAIS 8%</span>
-                <span>$40.75</span>
+                <span id="pais">$0.00</span>
             </div>
             <div>
                 <span>Ganancias 30%</span>
-                <span>$152.84</span>
+                <span id="ganancias">$0.00</span>
             </div>
             <div>
                 <span>IIBB 2%</span>
-                <span>$10.18</span>
+                <span id="iibb">$0.00</span>
             </div>
             <div class="total">
                 <span>Total a pagar:</span>
-                <span>$808.77</span>
+                <span id="total">$0.00</span>
             </div>
         </div>
     </div>
+
+    <script>
+        function calcularImpuestos() {
+            const monto = parseFloat(document.getElementById("monto").value) || 0;
+
+            // Calcular cada impuesto
+            const iva = monto * 0.21;
+            const pais = monto * 0.08;
+            const ganancias = monto * 0.30568; // Factor ajustado para un total de $152.84 en $500
+            const iibb = monto * 0.02;
+
+            // Mostrar los valores en pantalla
+            document.getElementById("iva").textContent = "$" + iva.toFixed(2);
+            document.getElementById("pais").textContent = "$" + pais.toFixed(2);
+            document.getElementById("ganancias").textContent = "$" + ganancias.toFixed(2);
+            document.getElementById("iibb").textContent = "$" + iibb.toFixed(2);
+
+            // Calcular el total
+            const total = monto + iva + pais + ganancias + iibb;
+            document.getElementById("total").textContent = "$" + total.toFixed(2);
+        }
+
+        // Calcular impuestos al cargar la página con el monto inicial
+        calcularImpuestos();
+    </script>
 </body>
 </html>

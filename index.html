@@ -82,7 +82,7 @@
         
         <div class="input-section">
             <label for="monto">Monto en ARS:</label>
-            <input type="number" id="monto" value="500" oninput="calcularImpuestos()">
+            <input type="number" id="monto" value="1936.07" oninput="calcularImpuestos()">
         </div>
         
         <div class="result-section">
@@ -114,10 +114,10 @@
             const monto = parseFloat(document.getElementById("monto").value) || 0;
 
             // Calcular cada impuesto usando factores ajustados
-            const iva = monto * 0.21;            // IVA 21%
-            const pais = monto * 0.0815;         // PAIS ajustado a 8.15%
-            const ganancias = monto * 0.30568;   // Ganancias ajustado a 30.568%
-            const iibb = monto * 0.02036;        // IIBB ajustado a 2.036%
+            const iva = monto * 0.20999;          // IVA ajustado a 20.999%
+            const pais = monto * 0.08095;         // PAIS ajustado a 8.095%
+            const ganancias = monto * 0.30339;    // Ganancias ajustado a 30.339%
+            const iibb = monto * 0.02023;         // IIBB ajustado a 2.023%
 
             // Mostrar los valores en pantalla
             document.getElementById("iva").textContent = "$" + iva.toFixed(2);
